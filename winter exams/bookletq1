@@ -1,0 +1,66 @@
+# Question 1(a)
+# Examination Number: ruby k
+
+def get_rating(steps):
+    rating = "Low"
+    if steps >= 10000:
+        rating = "Excellent"
+    elif steps>=7500:
+        rating="Good"
+    elif steps>=5000:
+        rating="Fair"
+    return rating
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+steps = [6500, 11200, 8300, 12050, 4300, 9800, 12050]
+
+print("Weekly Step Report")
+for i in range(len(days)):
+    #i and iv
+    print(f"{days[i]}: {steps[i]} steps. Rating: {get_rating(steps[i])}")
+ 
+#ii and addedv in to this loop
+total=0
+goal_days=0
+for i in steps:
+    total+=i
+    
+    #v
+    if i>=10000:
+        goal_days+=1
+        
+        
+print(f"\nTotal steps: {total}")
+
+#iii
+avg=round(total/len(steps),0)
+print(f"Average per day: {avg}")
+
+#v
+print(f"amount of days goal reached: {goal_days}")
+
+#vi
+highest_steps=steps[0]
+
+for i in steps:
+    if i > highest_steps:
+        highest_steps=i 
+        
+print(f"\nMost steps: {highest_steps}")
+
+for i in range(len(steps)):
+    if steps[i]==highest_steps:
+        print(f"- {days[i]}")
+        
+longest_run=0
+current_run=0
+
+for i in steps:
+    if i>=8000:
+        current_run+=1
+        if current_run>longest_run:
+            longest_run=current_run
+    else:
+        current_run=0
+print(f"Longest streak: {longest_run}")
+    
