@@ -1,0 +1,49 @@
+#step challenge b
+names=[]
+steps=[]
+while True:
+    name=input("Enter a name(or done to finish): ").strip().capitalize()
+    if name =="Done":
+        break
+    step=input(f"Enter steps for {name}: ")
+
+    while step.isdigit()==False:
+        print("error")
+        step=input(f"Enter steps for {i}: ")
+        steps.append(int(step))
+
+    names.append(name)
+    steps.append(int(step))
+    
+      
+print(names)
+print(steps)
+
+total=0
+highest=steps[0]
+if len(names)==0:
+    print("No entries-no winner")
+else:    
+    print(f"entries: {len(names)}")
+    
+    for i in steps:
+        total+=i
+
+    avg=round(total/len(names),1)
+    print(f"\nAvg steps: {avg}")
+    
+
+    for i in steps:
+        if i >highest:
+            highest=i
+            index_highest=steps.index(highest)
+            winner=names[index_highest]
+    print(f"Winner: {winner} with {highest} steps")
+    
+    print("Above avg")
+    for i in steps:
+        if i>avg:
+            index_more_avg=steps.index(i)
+            person_more=names[index_more_avg]
+            print(f"-{person_more}")
+    
