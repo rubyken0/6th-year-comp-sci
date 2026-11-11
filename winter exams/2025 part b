@@ -1,0 +1,21 @@
+#2025 part b
+numbers=[12,14,23]
+print(f"The initial list of values is: {numbers}")
+numbers.sort()
+print(f"The sorted list of values is: {numbers}")
+
+if len(numbers)==0:
+    print("The list is empty. Cannot compute the median.")
+else:
+    if len(numbers) % 2==1:
+        index_odd=len(numbers)//2 
+        median=numbers[index_odd]
+    elif len(numbers) % 2==0:
+        first_middle_i=len(numbers)/2
+        first=numbers[int(first_middle_i)]
+        second_middle_i=first_middle_i-1
+        second=numbers[int(second_middle_i)]
+        median=(first+second)/2
+    print(f"{median}")
+    
+    
