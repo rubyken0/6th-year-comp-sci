@@ -1,0 +1,34 @@
+#ruby k
+#a
+
+from random import randint
+
+def roll_dice():
+    return randint(1,6)
+
+rolls=[]
+for i in range(20):
+    rolls.append(roll_dice())
+print(f"Rolls: {rolls}")
+
+total=0
+sixes=0
+for i in rolls:
+    total+=i
+    if i==6:
+        sixes+=1
+print(f"Total: {total}")
+print(f"Sixes: {sixes}")
+
+frequencies=[0,0,0,0,0,0]
+for i in rolls:
+    frequencies[i-1] +=1
+for i in range(1,6+1):
+    print(f"{i}: {frequencies[i-1]}")
+
+most_rolled=frequencies[0]
+for i in frequencies:
+    if i>most_rolled:
+        most_rolled=i
+    elif 
+print
